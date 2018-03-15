@@ -38,14 +38,23 @@ export class ArrayUtils {
         }
     }
 
-    public static find(arrayToSearch: any[], objectId: number, fieldIdName?: string) {
-        if (!fieldIdName) {
-            fieldIdName = 'id';
+    /**
+     * search an object in an array by id
+     * 
+     * @param arrayToSearch 
+     * @param objectId 
+     * @param fieldIdName if the field is not filled, 'id' will be used
+     */
+    public static findFirst<T>(arrayToSearch: any[], objectId: any, fieldIdName?: string | undefined): T {
+        let fieldToSearch : string = 'id';
+
+        if (fieldIdName != undefined) {
+            fieldToSearch = fieldIdName;
         }
         let foundIndexPosition = undefined;
 
         for (let i = 0; i < arrayToSearch.length; i++) {
-            if (arrayToSearch[i].id === objectId) {
+            if (arrayToSearch[i][fieldToSearch] == objectId) {
                 foundIndexPosition = i;
                 break;
             }
@@ -54,26 +63,6 @@ export class ArrayUtils {
             return arrayToSearch[foundIndexPosition];
         }
 
-        return null;
-    }
-
-    public static findFirst(arrayToSearch: any[],  fieldNameToSearch: string, valueToFind: any) : any {
-
-        let foundIndexPostition = undefined;
-        if (!arrayToSearch) {
-            return null;
-        }
-
-        for (let i = 0; i < arrayToSearch.length; i++) {
-            if (arrayToSearch[i].fieldNameToSearch == valueToFind) {
-                foundIndexPostition = i;
-                break;
-            }
-        }
-        if (foundIndexPostition !== undefined) {
-            return arrayToSearch[foundIndexPostition];
-        }
-
-        return null;
+        return {} as T;
     }
 }

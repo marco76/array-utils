@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "description": "Array utility functions for JS",
   "main": "dist/index.js",
-  "types":"dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "preversion": "npm test",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
     "version": "npm run build && git add -A dist",
+    "public": "npm run publish --access public",
     "postversion": "git push && git push --tags && rm -rf build/temp"
-
   },
   "typescript": {
     "definition": "index.d.ts"
