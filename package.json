@@ -1,9 +1,9 @@
 {
   "name": "@molteni/array-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Array utility functions for JS",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "preversion": "npm test",
