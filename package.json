@@ -1,16 +1,14 @@
 {
   "name": "@molteni/array-utils",
-  "version": "0.0.4",
-  "description": "Array utility functions for JS",
+  "version": "0.0.5",
+  "description": "Array utility functions for JavaScript and TypeScript",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "preversion": "npm test",
     "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "version": "npm run build && git add -A dist",
     "public": "npm publish --access public",
-    "postversion": "git push && git push --tags && rm -rf build/temp",
     "compileOnly": "tsc",
     "prepublish": "tsc -p ./ --outDir dist/"
   },

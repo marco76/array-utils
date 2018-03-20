@@ -28,18 +28,23 @@ export class ArrayUtils {
         }
     }
 
-    public static searchAndReplace(arrayToChange: any[], key: string, keyValue: any, allOccurrences?: boolean): void {
+    public static searchAndReplace(arrayToChange: any[], key: string, keyValue: any, replacement: any,  onlyFirst?: boolean): number {
+
+        let occurrencesReplaced : number = 0;
 
         for (let i = 0; i < arrayToChange.length; i++) {
             if (arrayToChange[i][key] === keyValue) {
 
-                arrayToChange[i] = keyValue;
+                arrayToChange[i] = replacement;
+                occurrencesReplaced++;
 
-                if (!allOccurrences) {
+                if (onlyFirst) {
                     break;
                 }
             }
         }
+
+        return occurrencesReplaced;
     }
 
     /**
