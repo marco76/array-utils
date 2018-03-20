@@ -1,7 +1,7 @@
 export class ArrayUtils {
 
     /**
-     * search a value in an array and remove it if founded
+     * search a value in an array and remove it if found
      * @param {any[]} arrayToChange to be updated
      * @param {string} key, name of the field to be searched, e.g.: id, name
      * @param keyValue value of the key searched
@@ -27,6 +27,16 @@ export class ArrayUtils {
             iteration++;
         }
     }
+
+    /**
+     * search a value in an array and replace the value with the value passed in the parameter
+     * @param {any[]} arrayToChange array that contains the original data
+     * @param {string} key field name used to find the object (e.g. name, id)
+     * @param keyValue  value of the key
+     * @param replacement object that will replace the object found
+     * @param {boolean} onlyFirst if true only the first occurrence is replaced
+     * @returns {number} return the number of updated objects in the array
+     */
 
     public static searchAndReplace(arrayToChange: any[], key: string, keyValue: any, replacement: any,  onlyFirst?: boolean): number {
 

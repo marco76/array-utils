@@ -1,6 +1,10 @@
 npm test
 npm run prebublish
 
+## Documentation
+typedoc -out ./lib
+
+
 ## Publish locally
 
 - create a new package
