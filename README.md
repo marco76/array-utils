@@ -15,3 +15,6 @@ ArrayUtils :
 IdArrayUtils :
 - search by id
 - replace an object by id
+
+# Documentation
+In the directory /doc you can find some documentation
